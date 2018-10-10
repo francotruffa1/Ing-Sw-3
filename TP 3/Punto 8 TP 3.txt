@@ -1,0 +1,23 @@
+MacBook-Pro-de-Franco:desktop francotruffa$ docker run -d daviey/nyan-cat-web
+Unable to find image 'daviey/nyan-cat-web:latest' locally
+latest: Pulling from daviey/nyan-cat-web
+b7f33cc0b48e: Pull complete 
+5f9b58fd6dd4: Pull complete 
+1adeef8edfca: Pull complete 
+cc8a2986b124: Pull complete 
+7220539c61d6: Pull complete 
+Digest: sha256:57ac8fd383ada137e22a2894e92f74287f4566be0ae21ca97828b34a93a646c6
+Status: Downloaded newer image for daviey/nyan-cat-web:latest
+795fa2ec7359f26ace08bcf594e376a57686d0619aa5afefff81d19729dd70ae
+MacBook-Pro-de-Franco:desktop francotruffa$ docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS               NAMES
+795fa2ec7359        daviey/nyan-cat-web   "nginx -g 'daemon of…"   8 seconds ago       Up 7 seconds        80/tcp, 443/tcp     happy_heisenberg
+MacBook-Pro-de-Franco:desktop francotruffa$ docker kill compassionate_raman
+Error response from daemon: Cannot kill container: compassionate_raman: No such container: compassionate_raman
+MacBook-Pro-de-Franco:desktop francotruffa$ docker rm compassionate_raman
+Error: No such container: compassionate_raman
+MacBook-Pro-de-Franco:desktop francotruffa$ docker run -d -p 80:80 daviey/nyan-cat-web
+39a44aee51999d18b94d135f0743c638bc68e28f1acaecdd1ecb01a8009b976e
+
+MacBook-Pro-de-Franco:desktop francotruffa$ 
+MacBook-Pro-de-Franco:desktop francotruffa$ 

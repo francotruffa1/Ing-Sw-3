@@ -1,0 +1,35 @@
+MacBook-Pro-de-Franco:~ francotruffa$ docker ps -a
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                      PORTS                                              NAMES
+0d364ceb7705        busybox               "sh"                     58 seconds ago      Exited (0) 29 seconds ago                                                      dreamy_chebyshev
+144b5387c453        busybox               "echo 'Hola Mundo'"      8 minutes ago       Exited (0) 8 minutes ago                                                       zealous_pare
+53b544fe5b11        busybox               "sh"                     30 minutes ago      Exited (0) 30 minutes ago                                                      heuristic_neumann
+53b50619f23e        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   3 weeks ago         Created                                                                        relaxed_rosalind
+75b9cc462c3b        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   4 weeks ago         Exited (255) 4 weeks ago    0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   clever_mirzakhani
+e7cb2c07e6ce        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   4 weeks ago         Exited (137) 4 weeks ago                                                       unruffled_vaughan
+f69001ab921c        hello-world           "/hello"                 6 weeks ago         Exited (0) 6 weeks ago                                                         hungry_northcutt
+42e4686ad219        hello-world           "/hello"                 6 weeks ago         Exited (0) 6 weeks ago                                                         xenodochial_cori
+MacBook-Pro-de-Franco:~ francotruffa$ docker rm elated_lalande
+Error: No such container: elated_lalande
+MacBook-Pro-de-Franco:~ francotruffa$ docker rm dreamy_chebys
+Error: No such container: dreamy_chebys
+MacBook-Pro-de-Franco:~ francotruffa$ docker rm relaxed_rosal
+Error: No such container: relaxed_rosal
+MacBook-Pro-de-Franco:~ francotruffa$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] n
+Total reclaimed space: 0B
+MacBook-Pro-de-Franco:~ francotruffa$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+0d364ceb7705ad6ce2bf6489c1ca8081f2af4368623fbf1686b07ac2c911b44f
+144b5387c453e7456d829ebdeed98d2ef8bc1eea7fc3e957905ad3ef4665b558
+53b544fe5b11feb379dce0ba11fa58b2a804a6061d5839f7c439f93bcbb1be24
+53b50619f23e9e32bcbdf6ecf18425ebdc872337b330a90bc04bba424aba232f
+75b9cc462c3bddfbb12c76acd9b15523dee0d3ac3ff5b42b1c1b796c1c33da64
+e7cb2c07e6cee83c4aafe5545f0b5affa806c9e65dc4e4cd239c4cb86658ac71
+f69001ab921c8eb8d90d032fc6e943736ecfa5da06013c9596f960e15c695436
+42e4686ad21958c9f2028c59231d2dbb75ac0fad5e68928f5104941028b8c3ee
+
+Total reclaimed space: 2.18MB
+MacBook-Pro-de-Franco:~ francotruffa$ 

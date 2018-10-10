@@ -1,0 +1,110 @@
+MacBook-Pro-de-Franco:~ francotruffa$ docker run -it -v /home/miusuario busybox /bin/sh
+/ # ls -l /home/miusuario
+total 0
+/ # ls -l /home/miusuario/desktop
+ls: /home/miusuario/desktop: No such file or directory
+/ # ls -l /home/miusuario/desktop/
+ls: /home/miusuario/desktop/: No such file or directory
+/ # ls -l /var/escritorio
+ls: /var/escritorio: No such file or directory
+/ # ls -l /var/desktop
+ls: /var/desktop: No such file or directory
+/ # ls -l /escritorio
+ls: /escritorio: No such file or directory
+/ # ls -l /Escritorio
+ls: /Escritorio: No such file or directory
+/ # exit
+MacBook-Pro-de-Franco:~ francotruffa$ docker run -it -v /home/miusuario/desktop busybox /bin/sh
+/ # ls
+bin   dev   etc   home  proc  root  sys   tmp   usr   var
+/ # ls -l /escritorio
+ls: /escritorio: No such file or directory
+/ # exit
+MacBook-Pro-de-Franco:~ francotruffa$ docker run -it -v /home/miusuario/desktop:/var/escritorio busybox /bin/sh
+docker: Error response from daemon: Mounts denied: 
+The path /home/miusuario/desktop
+is not shared from OS X and is not known to Docker.
+You can configure shared paths from Docker -> Preferences... -> File Sharing.
+See https://docs.docker.com/docker-for-mac/osxfs/#namespaces for more info.
+.
+MacBook-Pro-de-Franco:~ francotruffa$ docker run -it -v ~/Desktop:/Desktop busybox /bin/sh
+/ # ls -l /var/escritorio
+ls: /var/escritorio: No such file or directory
+/ # ls -l /var/Desktop
+ls: /var/Desktop: No such file or directory
+/ # ls -l /var
+total 8
+drwxr-xr-x    3 root     root          4096 Oct  1 22:37 spool
+drwxr-xr-x    2 root     root          4096 Oct  1 22:37 www
+/ # ls -l /Desktop
+total 3093216
+-rw-r--r--    1 root     root          2725 Oct  9 21:25 Ant TP2.txt
+drwxr-xr-x   17 root     root           544 Sep 20 00:48 Arq Compu 2
+-rw-r--r--    1 root     root       1113210 Oct  1 22:15 Captura de pantalla 2018-10-01 a la(s) 19.15.43.png
+-rw-r--r--    1 root     root        226156 Oct  9 21:56 Captura de pantalla 2018-10-09 a la(s) 18.56.26.png
+drwxr-xr-x   13 root     root           416 Oct  8 20:12 Compu Grafica
+-rw-r--r--    1 root     root        361327 Oct  8 03:45 Do9KLuWWwAEcqBA (1).jpg
+drwxr-xr-x    4 root     root           128 Oct  9 14:57 GitHub
+drwxr-xr-x    5 root     root           160 Sep 25 20:40 IngSw3 PRACTICO
+-rw-r--r--    1 root     root          1360 Oct  9 21:36 Maven TP2.txt
+-rw-r--r--    1 root     root      19592275 Sep 10 20:20 Oracle_VM_VirtualBox_Extension_Pack-5.2.18.vbox-extpack
+-rw-r--r--    1 root     root          1142 Oct 10 14:12 Punto 5 TP 3.txt
+-rw-r--r--    1 root     root         21918 Oct  9 22:12 Punto 5 TP2 salida erronea.txt
+-rw-r--r--    1 root     root          2944 Oct 10 14:15 Punto 6 TP 3.txt
+-rwxrwxrwx    1 root     root     3138899968 May 28 19:14 Slackware-current_32bit.ova
+-rw-r--r--    1 root     root          3636 Oct 10 14:06 TP 3 DOCKER hasta el punto 4.txt
+drwxr-xr-x    3 root     root            96 Oct  4 17:53 TPs OyAE
+drwxr-xr-x   17 root     root           544 Jul 10 09:49 apache-ant-1.10.5
+drwxr-xr-x   10 root     root           320 Aug 13 21:25 apache-maven-3.5.4
+/ # ls -l /Desktop
+total 3093216
+-rw-r--r--    1 root     root          2725 Oct  9 21:25 Ant TP2.txt
+drwxr-xr-x   17 root     root           544 Sep 20 00:48 Arq Compu 2
+-rw-r--r--    1 root     root       1113210 Oct  1 22:15 Captura de pantalla 2018-10-01 a la(s) 19.15.43.png
+-rw-r--r--    1 root     root        226156 Oct  9 21:56 Captura de pantalla 2018-10-09 a la(s) 18.56.26.png
+drwxr-xr-x   13 root     root           416 Oct  8 20:12 Compu Grafica
+-rw-r--r--    1 root     root        361327 Oct  8 03:45 Do9KLuWWwAEcqBA (1).jpg
+drwxr-xr-x    4 root     root           128 Oct  9 14:57 GitHub
+drwxr-xr-x    5 root     root           160 Sep 25 20:40 IngSw3 PRACTICO
+-rw-r--r--    1 root     root          1360 Oct  9 21:36 Maven TP2.txt
+-rw-r--r--    1 root     root      19592275 Sep 10 20:20 Oracle_VM_VirtualBox_Extension_Pack-5.2.18.vbox-extpack
+-rw-r--r--    1 root     root          1142 Oct 10 14:12 Punto 5 TP 3.txt
+-rw-r--r--    1 root     root         21918 Oct  9 22:12 Punto 5 TP2 salida erronea.txt
+-rw-r--r--    1 root     root          2944 Oct 10 14:15 Punto 6 TP 3.txt
+-rwxrwxrwx    1 root     root     3138899968 May 28 19:14 Slackware-current_32bit.ova
+-rw-r--r--    1 root     root          3636 Oct 10 14:06 TP 3 DOCKER hasta el punto 4.txt
+drwxr-xr-x    3 root     root            96 Oct  4 17:53 TPs OyAE
+drwxr-xr-x   17 root     root           544 Jul 10 09:49 apache-ant-1.10.5
+drwxr-xr-x   10 root     root           320 Aug 13 21:25 apache-maven-3.5.4
+/ # touch /Desktop/hola.txt
+/ # exit
+MacBook-Pro-de-Franco:~ francotruffa$ ls
+Applications		Movies			config.log
+Desktop			Music			data
+Documents		Pictures		ing-software-3
+Downloads		Projects		tmp
+IdeaProjects		Proyectos Python	vstore.dat
+Ing-Sw-3		Public
+Library			VirtualBox VMs
+MacBook-Pro-de-Franco:~ francotruffa$ cd desktop
+MacBook-Pro-de-Franco:desktop francotruffa$ ls
+Ant TP2.txt
+Arq Compu 2
+Captura de pantalla 2018-10-01 a la(s) 19.15.43.png
+Captura de pantalla 2018-10-09 a la(s) 18.56.26.png
+Compu Grafica
+Do9KLuWWwAEcqBA (1).jpg
+GitHub
+IngSw3 PRACTICO
+Maven TP2.txt
+Oracle_VM_VirtualBox_Extension_Pack-5.2.18.vbox-extpack
+Punto 5 TP 3.txt
+Punto 5 TP2 salida erronea.txt
+Punto 6 TP 3.txt
+Slackware-current_32bit.ova
+TP 3 DOCKER hasta el punto 4.txt
+TPs OyAE
+apache-ant-1.10.5
+apache-maven-3.5.4
+hola.txt
+MacBook-Pro-de-Franco:desktop francotruffa$ 
