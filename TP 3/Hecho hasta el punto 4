@@ -1,0 +1,56 @@
+Last login: Tue Oct  9 17:53:59 on ttys002
+MacBook-Pro-de-Franco:~ francotruffa$ docker run
+"docker run" requires at least 1 argument.
+See 'docker run --help'.
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run a command in a new container
+MacBook-Pro-de-Franco:~ francotruffa$ docker version
+Client:
+ Version:           18.06.1-ce
+ API version:       1.38
+ Go version:        go1.10.3
+ Git commit:        e68fc7a
+ Built:             Tue Aug 21 17:21:31 2018
+ OS/Arch:           darwin/amd64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          18.06.1-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.3
+  Git commit:       e68fc7a
+  Built:            Tue Aug 21 17:29:02 2018
+  OS/Arch:          linux/amd64
+  Experimental:     true
+MacBook-Pro-de-Franco:~ francotruffa$ docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+90e01955edcd: Pull complete 
+Digest: sha256:2a03a6059f21e150ae84b0973863609494aad70f0a80eaeb64bddd8d92465812
+Status: Downloaded newer image for busybox:latest
+MacBook-Pro-de-Franco:~ francotruffa$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+busybox             latest              59788edf1f3e        7 days ago          1.15MB
+<none>              <none>              17493f4d9c10        5 weeks ago         86.9MB
+node                8.11-alpine         e24de9a22ce3        7 weeks ago         68.1MB
+jenkins/jenkins     lts                 74c174cc8e36        7 weeks ago         700MB
+openjdk             8u171-jre-alpine    ccfb0c83b2fe        3 months ago        83MB
+hello-world         latest              2cb0d9787c4d        3 months ago        1.85kB
+MacBook-Pro-de-Franco:~ francotruffa$ docker run busybox ACA HAY QUE EXPLICAR PORQUE NO HAY NINGUN RESULTADO
+MacBook-Pro-de-Franco:~ francotruffa$ docker run busybox echo "Hola Mundo"
+Hola Mundo
+MacBook-Pro-de-Franco:~ francotruffa$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+MacBook-Pro-de-Franco:~ francotruffa$ docker ps -a
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                      PORTS                                              NAMES
+144b5387c453        busybox               "echo 'Hola Mundo'"      16 seconds ago      Exited (0) 15 seconds ago                                                      zealous_pare
+53b544fe5b11        busybox               "sh"                     22 minutes ago      Exited (0) 22 minutes ago                                                      heuristic_neumann
+53b50619f23e        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   3 weeks ago         Created                                                                        relaxed_rosalind
+75b9cc462c3b        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   4 weeks ago         Exited (255) 4 weeks ago    0.0.0.0:8080->8080/tcp, 0.0.0.0:50000->50000/tcp   clever_mirzakhani
+e7cb2c07e6ce        jenkins/jenkins:lts   "/sbin/tini -- /usr/…"   4 weeks ago         Exited (137) 4 weeks ago                                                       unruffled_vaughan
+f69001ab921c        hello-world           "/hello"                 6 weeks ago         Exited (0) 6 weeks ago                                                         hungry_northcutt
+42e4686ad219        hello-world           "/hello"                 6 weeks ago         Exited (0) 6 weeks ago                                                         xenodochial_cori
+MacBook-Pro-de-Franco:~ francotruffa$ 
