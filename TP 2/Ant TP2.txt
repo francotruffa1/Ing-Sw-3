@@ -1,0 +1,65 @@
+Last login: Tue Oct  9 15:01:00 on ttys003
+MacBook-Pro-de-Franco:ing-software-3 francotruffa$ cd trabajo-practico-02
+MacBook-Pro-de-Franco:trabajo-practico-02 francotruffa$ ls
+ant
+MacBook-Pro-de-Franco:trabajo-practico-02 francotruffa$ cd ant
+MacBook-Pro-de-Franco:ant francotruffa$ ls
+build.xml	src
+MacBook-Pro-de-Franco:ant francotruffa$ export PATH=/Users/francotruffa/Desktop/apache-ant-1.10.5/bin:$PATH
+MacBook-Pro-de-Franco:ant francotruffa$ ant all 
+Buildfile: /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build.xml
+
+clean:
+
+init:
+    [mkdir] Created dir: /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build
+    [mkdir] Created dir: /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/lib
+    [mkdir] Created dir: /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build/classes
+    [mkdir] Created dir: /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/dist
+
+compile:
+     [echo] Compilando clases Java
+    [javac] /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build.xml:37: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build/classes
+
+jar:
+     [echo] Creando JAR file
+      [jar] Building jar: /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build/MyProject-1.0.jar
+
+dist:
+     [echo] Empaquetando archivo zip
+
+all:
+
+BUILD SUCCESSFUL
+Total time: 1 second
+MacBook-Pro-de-Franco:ant francotruffa$ ant javadoc
+Buildfile: /Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build.xml
+
+javadoc:
+     [echo] Generando JavaDoc desde source code
+  [javadoc] Generating Javadoc
+  [javadoc] Javadoc execution
+  [javadoc] Loading source files for package ar.edu.ucc...
+  [javadoc] Constructing Javadoc information...
+  [javadoc] Creating destination directory: "/Users/francotruffa/ing-software-3/trabajo-practico-02/ant/build/javadoc/"
+  [javadoc] Standard Doclet version 1.8.0_101
+  [javadoc] Building tree for all the packages and classes...
+  [javadoc] Building index for all the packages and classes...
+  [javadoc] Building index for all classes...
+
+BUILD SUCCESSFUL
+Total time: 1 second
+MacBook-Pro-de-Franco:ant francotruffa$ 
+...
+
+ANT ALL: genera los directorios, compila las clases java, crea los JAR y empaqueta el archivo en un ZIP.
+
+ANT JAVADOC: Genera un JAVADOC usando source code 
+
+--------------------------------------------------------------------------------------
+
+MAVEN: herramienta de sw que permite gestionar y construir proyectos java
+Archivo POM: MAVEN se basa en un fichero central llamado POM.XML donde se define todo lo que necesita el proyecto.
+
+
